@@ -168,7 +168,6 @@ func (s *Server) handleVerifyChallenge(w http.ResponseWriter, r *http.Request) {
 		writeErrorResponse(w, "Invalid JSON payload", http.StatusBadRequest)
 		return
 	}
-	fmt.Printf("Salt: %s\n", payload["salt"])
 	// Extract challenge ID and expiration
 	challengeID, ok := payload["challenge"].(string)
 	if !ok {
